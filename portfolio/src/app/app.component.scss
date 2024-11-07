@@ -1,4 +1,6 @@
 $primary-color: #42B0FF;
+$primary-color-hover:#64C5FF;
+$primary-color-hover-dark:#152f41;
 $background-main: #121212;
 $background-secondary: #1E1E1E;
 $background-tertiary: #383838;
@@ -13,10 +15,11 @@ p{
     
 }
 
-.primary-button{
+.secondary-button{
     background-color: transparent;
-    border:2px $primary-color solid;
-    color:$primary-color;
+    color:$text-main;
+    background-color: $primary-color;
+    border:none;
     border-radius: 5px;
     cursor:pointer;
     transition: transform 0.3s ease-in-out;
@@ -28,9 +31,10 @@ p{
     font-size: 20px;
 }
 
-.primary-button:hover{
+.secondary-button:hover{
     box-shadow: 0px 0px 10px $primary-color;
-    
+    background-color: $primary-color-hover;
+    font-weight: bold;
 }
 
 .container{
@@ -40,6 +44,77 @@ p{
     border: 1px $primary-color solid;
 }
 
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 20px;
+  color: white;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $background-secondary;
+    filter: blur(9rem); /* Aplica el desenfoque solo al fondo */
+    opacity: 0.5;
+    z-index: -1; /* Asegura que el pseudo-elemento esté detrás del contenido */
+  }
+  
+  .logo{
+    margin:1rem 5vh;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    
+  }
+
+  .logo::after {
+    content: '.';
+    color: $primary-color;
+    animation: blink 2s infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+  .navigation{
+    display: flex;
+    flex-direction: row;
+    flex:1;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-right: 2vw;
+    gap:2vw;
+    cursor: pointer;
+    
+    p{
+      transition: transform 0.3s ease-in-out;
+    }
+
+    p:hover{
+     color: rgb(255, 255, 255);
+     transform: translateY(-5px);
+    }
+  }
+
+}
+
+
+
 main {
     padding: 1rem;
     flex: 1;
@@ -48,8 +123,6 @@ main {
     background-color: $background-main;
     justify-content: center;
     align-items: center;
-  
-
 
     .presentation {
     min-height: 70vh;
@@ -60,12 +133,12 @@ main {
     align-items: center;
     justify-content: center; 
     padding: 0 5%;
-    gap: 5rem;
+    gap: 10rem;
     
     
     .content-img{
-      margin-top: 20vh;
-      gap:10rem;
+      margin-top: 30vh;
+      gap:5rem;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -74,7 +147,9 @@ main {
 
     .presentation-content {
       color: $text-main;
-      max-width: 60%; 
+      min-width: 70%;
+      max-width: 90%; 
+      
       
       .name {
         font-size: 1.2rem;
@@ -93,6 +168,10 @@ main {
     }
     
     .image-container {
+      box-shadow: 0 0px 5px $primary-color;
+      
+      
+      border: 1px $primary-color solid;
       width: 300px;
       height: 300px;
       border: 2px solid $primary-color;
@@ -113,72 +192,192 @@ main {
     }
 
     .content{
-        
+          
+
         display: flex;
         flex-direction: row;
         gap:10rem;
 
         .about-me{
+        padding:5px 30px;
         display: flex;
         flex-direction: column;
-        max-width: 610px;
+        max-width: 40vw;
         margin-bottom: 20vh;
         }
         
-        .projects{
-          display: flex;
-          flex-direction: column ;
-          height:28vh;
-          max-width: 550px;
+        .projects {
+          background-color: $background-main;
+          border: 1px solid $primary-color;
+          border-radius: 0.5rem;
+          padding: 1.5rem;
+          max-width: 100%;
+          overflow: hidden;
+          margin-bottom: 20vh;
+        }
 
-          .carousel{
-            flex-direction: row;
-            margin-bottom:15px;
-            a {
-              text-decoration: none;  /* Elimina la línea de subrayado */
-              color: inherit;         /* Elimina el color predeterminado del enlace */
-            }
+        .social{
+          background-color: $background-secondary;
+          border: 1px solid $primary-color;
+          border-radius: 0.5rem;
+          padding: 2rem;
+          max-width: 100%;
+          margin-bottom: 20vh;
+          h2 {
+            color: $text-main;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            font-family: system-ui, -apple-system, sans-serif;
+          }
             
-            a:visited {
-              color: inherit;         /* Elimina el color del enlace visitado */
-            }
-            .carousel-item{
-              max-width: 200px;
-              max-height: 150px;
-              cursor:pointer;
-              background-color: $background-secondary;
-              padding:10px 0px 0px 15px;
-              border-radius: 10px;
-              transition: transform 0.1s ease-in-out;
-              
+          .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+          }
+          
+          .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: $text-main;
+            text-decoration: none;
+            padding: 0.75rem;
+            border-radius: 0.375rem;
+            transition: all 0.2s ease-in-out;
+            font-family: monospace;
+            font-size: 0.9rem;
+          }
+          i:hover{
+            color: $primary-color;
+          }
+          :visited{
+            color:$text-main;
+          }
 
-              h4{
-                margin:0px;
-              }
+          .contact-item {
+            color: $text-main;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+          }
 
-              .technology{
-                margin-left: 75%;
-                display: flex;
-                max-height: 25px;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                border-bottom-right-radius: 10px;
-                border-top-left-radius: 10px;
-                box-shadow:-2px -1px 10px #000000;
-                background-color: $primary-color;
-              }
+          .contact-item:hover {
+            background-color: $primary-color-hover-dark;
+            border-color: $primary-color;
+            transform: translateY(-1px);
+          }
+
+          .contact-item i {
+            font-size: 1.1rem;
+            color: $primary-color;
+            width: 1.5rem;
+            text-align: center;
+          }
+          
+          .contact-item span {
+            color: inherit;
+          }
+          
+        }
+        
+        h2 {
+          color: #fff;
+          font-size: 1.5rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+        }
+        
+        .carousel {
+          display: flex;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          padding-bottom: 1rem; /* Add space for the scrollbar */
+          max-width: calc(16vw * 2.5); /* 2.5 times the width of a carousel item */
+          margin: 0 auto; /* Center the carousel if container is wider */
+          align-items: center;
+          
+          .secondary-button{
+             min-width: 10vw;
+          }
+
+        }
+        
+        .carousel::-webkit-scrollbar {
+          height: 8px;
+        }
+        
+        .carousel::-webkit-scrollbar-track {
+          background: $background-tertiary;
+          border-radius: 4px;
+        }
+        
+        .carousel::-webkit-scrollbar-thumb {
+          background: $primary-color;
+          border-radius: 4px;
+        }
+        
+        .carousel::-webkit-scrollbar-thumb:hover {
+          background: $primary-color-hover;
+        }
+        
+        .carousel-item-link {
+          text-decoration: none;
+          color: inherit;
+          flex: 0 0 auto;
+        }
+        
+        .carousel-item {
+          background-color: $background-secondary;
+          border: 1px solid $background-tertiary;
+          border-radius: 0.375rem;
+          padding: 1rem;
+          margin-right: 1rem;
+          width: 300px;
+          scroll-snap-align: start;
+          
+        }
+        
+        .carousel-item h4 {
+          color: $text-main;
+          font-size: 1.125rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+          text-decoration: none;
+        }
+        .carousel-item:visited {
+          color: inherit;
+          text-decoration: none;
+        }
+        
+        .carousel-item p {
+          color: $text-secondary;
+          font-size: 0.875rem;
+          margin-bottom: 0.75rem;
+        }
+        
+        .technology p {
+          background-color: $primary-color;
+          color: $text-main;
+          font-size: 0.75rem;
+          font-weight: 600;
+          padding: 0.25rem 0.5rem;
+          border-radius: 0.25rem;
+          display: inline-block;
+        }
+        .carousel-item:hover{
               
-            }
-            .carousel-item:hover{
-              transform: translateY(-5px);
               background-color: $background-tertiary;
               border: 1px  white solid;
               box-shadow: 0 15px 50px $background-secondary;
             }
+
+        
           }
 
-        }
+        
 
         .skills{
             
@@ -223,25 +422,13 @@ main {
             }
             
         }
-    }
-}
+      
+      }
  footer{
-    .social-icons{
-        display: flex;
-        flex-direction: row;
-        color:$text-main;
-        font-size: small;
-        gap: 10rem;
-      }
-      .social-icons i{
-        margin: 0.5rem;
-      }
-      .social-icons :hover{
-        color: $primary-color;
-      }
-      :visited{
-        color:$text-main;
-      }
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
  } 
 
   @media (max-width: 768px) {
