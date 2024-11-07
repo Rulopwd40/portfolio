@@ -1,0 +1,66 @@
+<body>
+    <nav><b>Navbar</b></nav>
+
+    <main>
+        <div class="presentation">
+          <div class="content">
+            <h2 class="name">Giuliano Prigioni</h2>
+            <h1 class="title">Full Stack Developer</h1>
+            
+          </div>
+          
+          <div class="container image-container">
+            <img src="your-image.jpg" alt="Profile picture">
+          </div>
+          
+          
+        </div>
+        <button class="primary-button">Get Started</button>
+        
+      <div class="me-container">
+        <div class="about-me">
+          <h2>About me</h2>
+          <p>I am a 20-year-old third-year Information Systems Engineering student at Universidad Tecnológica Nacional, specializing in Information Technology.</p>
+          <p>Passionate about programming, I focus on backend development, particularly with Java, Spring Boot, and Hibernate.</p>
+          <p>I thrive on solving complex problems and am always eager to learn new technologies.</p>
+          <p>My goal is to contribute to meaningful projects that challenge me and foster my growth as a developer.</p>
+        </div>
+        <div class="container skills">
+          <h2>Skills</h2>
+          <h3>Front End</h3>
+          <div class="cards">
+              @for(tech of frontend; track tech.name){
+                <div class="card">
+                  <img [src]="tech.imageUrl" [alt]="tech.name" />
+                  <h4>{{tech.name}}</h4>
+                </div>
+              }
+          </div>
+          <h3>Back End</h3>
+          <div class="cards">
+            @for(tech of backend; track tech.name){
+              <div class="card">
+                <img [src]="tech.imageUrl" [alt]="tech.name" />
+                <h4>{{tech.name}}</h4>
+              </div>
+            }
+          </div>
+
+        </div>
+      </div>
+        
+    </main>
+
+    <footer> 
+      <div class="social-icons">
+      <i class="fas fa-map-marker-alt">Santa Fe, Argentina</i>
+      <i class="fas fa-at">giulianopr14&#64;gmail.com</i>
+      <a href="www.linkedin.com/in/giuliano-prigioni" target="_blank">
+        <i class="fab fa-linkedin">linkedin.com/in/giuliano-prigioni</i> <!-- Icono de LinkedIn -->
+      </a>
+      <a href="https://github.com/Rulopwd40" target="_blank">
+        <i class="fab fa-github">github.com/Rulopwd40</i> <!-- Icono de GitHub -->
+      </a>
+    </div>     
+  </footer>
+</body>
