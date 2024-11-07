@@ -15,7 +15,10 @@
           
           
         </div>
-        <button class="primary-button">Get Started</button>
+        <div class="button">
+          <app-animatedbutton [text]="'Get Started'"></app-animatedbutton>
+        </div>
+        
         
       <div class="me-container">
         <div class="about-me">
@@ -44,8 +47,17 @@
                 <h4>{{tech.name}}</h4>
               </div>
             }
+          
           </div>
-
+          <h3>DataBases</h3>
+          <div class="cards">
+            @for(tech of databases; track tech.name){
+              <div class="card">
+                <img [src]="tech.imageUrl" [alt]="tech.name" />
+                <h4>{{tech.name}}</h4>
+              </div>
+            }
+          </div>
         </div>
       </div>
         

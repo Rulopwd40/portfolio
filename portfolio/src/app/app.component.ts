@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { AnimatedbuttonComponent } from './animatedbutton/animatedbutton.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, AnimatedbuttonComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -22,6 +23,11 @@ export class AppComponent {
     { name: 'Hibernate', imageUrl:'hibernate.svg'},
     { name: 'C#', imageUrl: 'cs.svg'},
     { name: 'C++', imageUrl: 'c++.svg'}
+  ]
+
+  databases = [
+    { name: 'PostgreSQL', imageUrl: 'postgresql.svg'},
+    { name: 'SQLite', imageUrl: 'sqlite.svg'},
   ]
 
 }
