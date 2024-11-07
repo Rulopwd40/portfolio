@@ -2,7 +2,6 @@ $primary-color: #42B0FF;
 $background-main: #121212;
 $background-secondary: #1E1E1E;
 $background-tertiary: #383838;
-
 $text-main: #E0E0E0;
 $text-secondary: #B0B0B0;
 $accent-color: #FF4081;
@@ -11,6 +10,7 @@ $error-color: #FF5252;
 
 p{
     margin-bottom: 16px;
+    
 }
 
 .primary-button{
@@ -30,11 +30,14 @@ p{
 
 .primary-button:hover{
     box-shadow: 0px 0px 10px $primary-color;
+    
 }
 
 .container{
     box-shadow: 0 0px 5px $primary-color;
     border-radius: 10px;
+    padding:5px 30px;
+    border: 1px $primary-color solid;
 }
 
 main {
@@ -47,16 +50,29 @@ main {
     align-items: center;
   
 
+
     .presentation {
     min-height: 70vh;
     background-color: $background-main;
     display: flex;
+    flex-direction: column;
+    width: auto;
     align-items: center;
     justify-content: center; 
     padding: 0 5%;
     gap: 5rem;
     
-    .content {
+    
+    .content-img{
+      margin-top: 20vh;
+      gap:10rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .presentation-content {
       color: $text-main;
       max-width: 60%; 
       
@@ -96,7 +112,7 @@ main {
       padding-bottom: 40vh;
     }
 
-    .me-container{
+    .content{
         
         display: flex;
         flex-direction: row;
@@ -106,12 +122,68 @@ main {
         display: flex;
         flex-direction: column;
         max-width: 610px;
+        margin-bottom: 20vh;
+        }
+        
+        .projects{
+          display: flex;
+          flex-direction: column ;
+          height:28vh;
+          max-width: 550px;
+
+          .carousel{
+            flex-direction: row;
+            margin-bottom:15px;
+            a {
+              text-decoration: none;  /* Elimina la línea de subrayado */
+              color: inherit;         /* Elimina el color predeterminado del enlace */
+            }
+            
+            a:visited {
+              color: inherit;         /* Elimina el color del enlace visitado */
+            }
+            .carousel-item{
+              max-width: 200px;
+              max-height: 150px;
+              cursor:pointer;
+              background-color: $background-secondary;
+              padding:10px 0px 0px 15px;
+              border-radius: 10px;
+              transition: transform 0.1s ease-in-out;
+              
+
+              h4{
+                margin:0px;
+              }
+
+              .technology{
+                margin-left: 75%;
+                display: flex;
+                max-height: 25px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-bottom-right-radius: 10px;
+                border-top-left-radius: 10px;
+                box-shadow:-2px -1px 10px #000000;
+                background-color: $primary-color;
+              }
+              
+            }
+            .carousel-item:hover{
+              transform: translateY(-5px);
+              background-color: $background-tertiary;
+              border: 1px  white solid;
+              box-shadow: 0 15px 50px $background-secondary;
+            }
+          }
+
         }
 
         .skills{
             
             padding:5px 30px 50px 30px;
-            border: 1px $primary-color solid;
+            
             width: fit-content;
             max-width: 420px;
             .cards{

@@ -2,10 +2,13 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AnimatedbuttonComponent } from './animatedbutton/animatedbutton.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AnimatedbuttonComponent],
+  imports: [RouterOutlet, 
+    AnimatedbuttonComponent,
+    ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -28,6 +31,17 @@ export class AppComponent {
   databases = [
     { name: 'PostgreSQL', imageUrl: 'postgresql.svg'},
     { name: 'SQLite', imageUrl: 'sqlite.svg'},
+  ]
+
+  miscellaneous = [
+    { name:'Github', imageUrl:'github.svg'}
+  ]
+
+  projects = [
+    { name:'StockSalesSystem' , 
+      url:'https://github.com/Rulopwd40/StockSalesSystem', 
+      description:'System made for product selling,stock management and stats reports',
+      technology:'Java'}
   ]
 
 }

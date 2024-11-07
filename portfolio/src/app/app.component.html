@@ -3,7 +3,8 @@
 
     <main>
         <div class="presentation">
-          <div class="content">
+          <div class="content-img">
+          <div class="presentation-content">
             <h2 class="name">Giuliano Prigioni</h2>
             <h1 class="title">Full Stack Developer</h1>
             
@@ -12,15 +13,16 @@
           <div class="container image-container">
             <img src="your-image.jpg" alt="Profile picture">
           </div>
-          
-          
         </div>
-        <div class="button">
-          <app-animatedbutton [text]="'Get Started'"></app-animatedbutton>
+          <div class="button">
+            <app-animatedbutton [text]="'Get Started'"></app-animatedbutton>
+          </div>
         </div>
+       
         
         
-      <div class="me-container">
+      <div class="content">
+        <div class="info-container">
         <div class="about-me">
           <h2>About me</h2>
           <p>I am a 20-year-old third-year Information Systems Engineering student at Universidad Tecnológica Nacional, specializing in Information Technology.</p>
@@ -28,6 +30,24 @@
           <p>I thrive on solving complex problems and am always eager to learn new technologies.</p>
           <p>My goal is to contribute to meaningful projects that challenge me and foster my growth as a developer.</p>
         </div>
+       <div class="container projects">
+          <h2>Projects</h2>
+          <div class="carousel">
+            @for(project of projects;track project.name){
+              <a href="project.url">
+              <div class="carousel-item"> 
+                <h4>{{project.name}}</h4>
+                <p>{{project.description}}</p>
+                <div class="technology">
+                  <p >{{project.technology}}</p>
+                </div>
+              
+              </div>
+            </a>
+            }
+          </div>
+        </div>
+      </div>
         <div class="container skills">
           <h2>Skills</h2>
           <h3>Front End</h3>
@@ -55,6 +75,23 @@
               <div class="card">
                 <img [src]="tech.imageUrl" [alt]="tech.name" />
                 <h4>{{tech.name}}</h4>
+              </div>
+            }
+          </div>
+          <h3>Miscellaneous</h3>
+          <div class="cards">
+            @for(tech of miscellaneous; track tech.name){
+              <div class="card">
+                @if(tech.name == 'Github'){
+                  <img [src]="tech.imageUrl" [alt]="tech.name" style="
+                    background-color: white;
+                    border-radius: 50%;"/>
+                <h4>{{tech.name}}</h4>
+                }
+                @else{
+                  <img [src]="tech.imageUrl" [alt]="tech.name" />
+                  <h4>{{tech.name}}</h4>
+                }
               </div>
             }
           </div>
