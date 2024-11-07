@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 42px;
+        fill: #fff;
+        font-family: "Segoe UI";
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        fill: #42b0ff;
+      }
+    </style>
+  </defs>
+  <text id="GP." class="cls-1" x="-0.806" y="45.29">GP<tspan class="cls-2">.</tspan></text>
+</svg>
