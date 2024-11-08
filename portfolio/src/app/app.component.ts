@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AnimatedbuttonComponent } from './animatedbutton/animatedbutton.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, 
     AnimatedbuttonComponent,
-    
+    CommonModule
     ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -59,6 +60,12 @@ export class AppComponent {
       description:'A Kanban with drag & drop with Devs cards and taskcards',
       technology:'Angular'
     }
+  ]
+
+  languages = [
+    { name: 'Spanish', level: 'Native', imageUrl:'spanish.png'},
+    { name: 'English', level: 'Upper Intermediate', imageUrl:'english.svg' },
+    { name: 'German', level: 'Beginner', imageUrl:'deutsch.svg'}
   ]
 
   scrollToSection(sectionId: string): void {

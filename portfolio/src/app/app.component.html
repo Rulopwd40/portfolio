@@ -7,6 +7,7 @@
           <p (click)="scrollToSection('skills')">Skills</p>
           <p (click)="scrollToSection('projects')">Projects</p>
           <p (click)="scrollToSection('contact')">Contact</p>
+          <p (click)="scrollToSection('languages')">Languages</p>
           <p></p>
       </div>
     </nav>
@@ -87,6 +88,7 @@
         </div>
       </section>
       </div>
+      <div class="skills-languages">
       <section id="skills">
         <div class="container skills">
           <h2>Skills</h2>
@@ -94,7 +96,7 @@
           <div class="cards">
               @for(tech of frontend; track tech.name){
                 <div class="card">
-                  <img [src]="tech.imageUrl" [alt]="tech.name" />
+                  <img [src]="tech.imageUrl" [alt]="tech.name" class="tech-img"/>
                   <h4>{{tech.name}}</h4>
                 </div>
               }
@@ -103,7 +105,7 @@
           <div class="cards">
             @for(tech of backend; track tech.name){
               <div class="card">
-                <img [src]="tech.imageUrl" [alt]="tech.name" />
+                <img [src]="tech.imageUrl" [alt]="tech.name" class="tech-img"/>
                 <h4>{{tech.name}}</h4>
               </div>
             }
@@ -113,7 +115,7 @@
           <div class="cards">
             @for(tech of databases; track tech.name){
               <div class="card">
-                <img [src]="tech.imageUrl" [alt]="tech.name" />
+                <img [src]="tech.imageUrl" [alt]="tech.name" class="tech-img"/>
                 <h4>{{tech.name}}</h4>
               </div>
             }
@@ -123,13 +125,13 @@
             @for(tech of miscellaneous; track tech.name){
               <div class="card">
                 @if(tech.name == 'Github'){
-                  <img [src]="tech.imageUrl" [alt]="tech.name" style="
+                  <img [src]="tech.imageUrl" [alt]="tech.name" class="tech-img" style="
                     background-color: white;
                     border-radius: 50%;"/>
                 <h4>{{tech.name}}</h4>
                 }
                 @else{
-                  <img [src]="tech.imageUrl" [alt]="tech.name" />
+                  <img [src]="tech.imageUrl" [alt]="tech.name" class="tech-img" />
                   <h4>{{tech.name}}</h4>
                 }
               </div>
@@ -138,11 +140,23 @@
         </div>
       </section>
       <section id="languages">
-        <div class="">
-
+        <div class="container languages">
+          <h2>Languages</h2>
+          <div class="cards">
+          @for(language of languages;track language.name){
+            <div class="card">
+              <div class="language-image">
+              <img [src]="language.imageUrl" [alt]="language.name"/>
+              </div>
+              <h4>{{language.name}}</h4>
+              <p>{{language.level}}</p>
+            </div>
+          }
+        </div>
         </div>
       </section>
-      
+    
+    </div>
       </div>
       
 
