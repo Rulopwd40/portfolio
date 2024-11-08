@@ -1,5 +1,6 @@
 $primary-color: #42B0FF;
 $primary-color-hover: #64C5FF;
+$primary-color-hover-alt: #3389c7;
 $primary-color-hover-dark: #152f41;
 $background-main: #121212;
 $background-secondary: #1E1E1E;
@@ -24,15 +25,15 @@ p {
   padding: 0px 10px;
   display: inline-block;
   width: auto;
-  height: 60px;
+  height: 2vw;
   font-weight: 500;
   font-size: 20px;
 }
 
 .secondary-button:hover {
-  box-shadow: 0px 0px 10px $primary-color;
-  background-color: $primary-color-hover;
-  font-weight: bold;
+  
+  background-color: $primary-color-hover-alt;
+ 
 }
 
 
@@ -200,7 +201,7 @@ main {
       display: flex;
       flex-direction: column;
       max-width: 40vw;
-      margin-bottom: 20vh;
+      margin-bottom: 25vh;
     }
 
     .projects {
@@ -208,7 +209,7 @@ main {
       padding: 1.5rem;
       max-width: 100%;
       overflow: hidden;
-      margin-bottom: 20vh;
+      margin-bottom: 25vh;
 
       .carousel {
         display: flex;
@@ -401,6 +402,7 @@ main {
         transition: transform 0.3s ease-in-out;
         border-radius: 10px;
         cursor: pointer;
+        box-shadow: 0px 0px 2px black;
 
         .tech-img{
           max-width: 50px;
@@ -411,8 +413,9 @@ main {
       
 
       .card:hover {
-        transform: translateY(-15px);
-        box-shadow: 0 15px 30px $primary-color;
+        transform: translateY(-3px);
+        box-shadow: 0 0px 5px $primary-color,
+                    inset 0 -5px 0 2px $primary-color;
       }
     }
 
@@ -443,6 +446,7 @@ main {
         text-align: center;
         transition: transform 0.3s ease-in-out;
         cursor: pointer;
+        box-shadow: 0px 0px 2px black;
 
         h4{
           margin:0;
@@ -471,8 +475,9 @@ main {
           }
         }
       .card:hover{
-        transform: translateY(-15px);
-        box-shadow: 0 15px 30px $primary-color;
+        transform: translateY(-3px);
+        box-shadow: 0 0px 5px $primary-color,
+                    inset 0 -5px 0 2px $primary-color;
       }
       
       

@@ -16,9 +16,9 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'portfolio';
   
-  me= {
-    image:'me-image.jpg'
-  }
+  me = {
+    image: "me-image.jpg",
+  };
 
   frontend = [
     { name: 'Angular', imageUrl: 'angular.svg' },
