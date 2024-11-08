@@ -57,7 +57,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "optimization": true,
+              
               "extractLicenses": false,
               "sourceMap": true
             }
@@ -101,6 +101,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
