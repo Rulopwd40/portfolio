@@ -1,0 +1,49 @@
+name: CI/CD Angular
+
+on:
+  push:
+    branches:
+      - main     # Cambia 'main' por tu rama principal si es necesario
+  pull_request:
+    branches:
+      - main     # Este flujo de trabajo también se ejecutará para los PR hacia la rama principal
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Cambia la versión de Node.js según tu proyecto
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test -- --watch=false --browsers=ChromeHeadlessCI
+
+      - name: Build project
+        run: npm run build -- --prod
+
+      - name: Upload build artifacts (optional)
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: dist/
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    if: success()  # Solo se ejecuta si la compilación y las pruebas fueron exitosas
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to GitHub Pages (or other platform)
+        run: |
+          npm install -g angular-cli-ghpages
+          npx ngh --dir=dist/  # Despliegue a GitHub Pages
