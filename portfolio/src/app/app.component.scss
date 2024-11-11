@@ -596,10 +596,12 @@ footer {
     .logo {
       margin: 0.5rem 0;
       padding-left: 0;
+      display: block;
     }
     .navigation {
       justify-content: center;
       padding-right: 0;
+      display: none;
       gap: 1rem;
     }
   }
@@ -660,6 +662,7 @@ footer {
     .navigation {
       flex-direction: column;
       align-items: center;
+      display: none;
     }
   }
 
