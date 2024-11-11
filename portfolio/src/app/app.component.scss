@@ -640,13 +640,20 @@ footer {
       }
     }
     .skills-languages {
+      width: 100%;
+      
+      #skills{
+        width: 100%;
+      }
       .skills {
-        .cards {
-          justify-content: center;
-        }
+        width: 100%;
+       
+      }
+      #languages{
+        width: 100%;
       }
       .languages {
-        width: auto;
+        width: 100%;
         .cards {
           width: auto;
           flex-direction: column;
@@ -686,10 +693,18 @@ footer {
       }
     }
     .skills-languages {
+      
       .skills {
+        
         .cards {
+          width: 100%;
+          margin: 0;
+          padding: 0px;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
           .card {
-            width: 70px;
+            width: 100%;
             .tech-img {
               max-width: 40px;
               max-height: 40px;

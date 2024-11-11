@@ -73,7 +73,7 @@ export class AppComponent {
     if (section) {
       const headerOffset = 100; // Ajusta este valor según la altura de tu encabezado
       const elementPosition = section.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
   
       window.scrollTo({
         top: offsetPosition,
