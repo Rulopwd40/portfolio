@@ -1,13 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
 $primary-color: #42B0FF;
-$background-main: #121212;
-$background-secondary: #1E1E1E;
+$primary-color-hover: #64C5FF;
+$primary-color-hover-alt: #3389c7;
+$primary-color-hover-dark: #152f41;
+$intermediate:#101c2b;
+$background-main: #0a0e13;
+$background-secondary: #0f161f;
+$background-tertiary: #2562b3;
 $text-main: #E0E0E0;
 $text-secondary: #B0B0B0;
 $accent-color: #FF4081;
 $success-color: #4CAF50;
 $error-color: #FF5252;
-
 
 html, body {
     height: 100%;
@@ -30,7 +33,6 @@ body {
 
 nav {
   padding: 1rem;
-  
   display: flex;
   flex-direction: row;
 }
