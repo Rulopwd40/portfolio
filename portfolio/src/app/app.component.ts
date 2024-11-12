@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AnimatedbuttonComponent } from './animatedbutton/animatedbutton.component';
 import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title = 'portfolio';
-  
+
+
   me = {
     image: "me-image.jpg",
   };
@@ -80,5 +82,8 @@ export class AppComponent {
         behavior: 'smooth'
       });
     }
+    
   }
+
+
 }
