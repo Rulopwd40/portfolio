@@ -13,7 +13,7 @@ $success-color: #4CAF50;
 $error-color: #FF5252;
 
 html, body {
-    overflow-x: hidden;
+    
     height: 100%;
     margin: 0;
     padding: 0;
@@ -43,3 +43,29 @@ footer {
   background-color: $background-secondary;
 }
 
+::-webkit-scrollbar {
+  height: 10px;
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: $background-tertiary;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-color;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-color-hover;
+}
+
+
+@media(max-width: 768px) {
+  html,body{
+    overflow-x: hidden;
+  }
+
+}
