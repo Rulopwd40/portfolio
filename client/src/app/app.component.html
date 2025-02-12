@@ -1,0 +1,168 @@
+<body>
+    <nav>
+      <div class="logo">GP</div>
+      <div class="navigation">
+          <p (click)="scrollToSection('presentation')">Presentation</p>
+          <p (click)="scrollToSection('aboutme')">About Me</p>
+          <p (click)="scrollToSection('skills')">Skills</p>
+          <p (click)="scrollToSection('projects')">Projects</p>
+          <p (click)="scrollToSection('contact')">Contact</p>
+          <p (click)="scrollToSection('languages')">Languages</p>
+          <p></p>
+      </div>
+    </nav>
+
+    <main>
+      <section id="presentation" class="presentation-section">
+        <div class="presentation">
+          <div class="content-img">
+          <div class="presentation-content">
+            <h2 class="name">Giuliano Prigioni</h2>
+            <h1 class="title">Jr. Full Stack Developer</h1>
+            
+          </div>
+          <!---
+          <div class="container image-container">
+            <img [src]="me.image" alt="Profile picture">
+          </div>-->
+        </div>
+          <div class="button">
+            <app-animatedbutton (click) ="scrollToSection('aboutme')" [text]="'Get Started'"></app-animatedbutton>
+          </div>
+        </div>
+      </section>
+        
+      
+      <div class="content">
+        <div class="info-container">
+        <section class="autotune" id="aboutme">
+        <div class="about-me">
+          <h2>About me</h2>
+          <p>I am a 20-year-old third-year Information Systems Engineering student at Universidad Tecnológica Nacional, specializing in Information Technology.</p>
+          <p>Passionate about programming, I focus on backend development, particularly with Java, Spring Boot, and Hibernate.</p>
+          <p>I thrive on solving complex problems and am always eager to learn new technologies.</p>
+          <p>My goal is to contribute to meaningful projects that challenge me and foster my growth as a developer.</p>
+        </div>
+      </section>
+      <section id="projects">
+        <div class="container projects">
+          <h2>Projects</h2>
+          <div class="carousel">
+            @for(project of projects; track project.name) {
+              <a [href]="project.url" class="carousel-item-link">
+                <div class="carousel-item"> 
+                  <h4>{{ project.name }}</h4>
+                  <p>{{ project.description }}</p>
+                </div>
+                <div class="technology">
+                  <p>{{ project.technology }}</p>
+                </div>
+              </a>
+            }
+            <a href="https://github.com/Rulopwd40?tab=repositories"><div class="card-pane"><p>View All</p></div></a>
+            
+          </div>
+        </div>
+      </section>
+      <section id="contact">
+        <div class="container social">
+          <h2>Contact</h2>
+          <div class="contact-links">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Santa Fe, Argentina</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-at"></i>
+              <span>giulianopr14&#64;gmail.com</span>
+            </div>
+            <a href="https://www.linkedin.com/in/giuliano-prigioni" target="_blank" class="contact-item">
+              <i class="fab fa-linkedin"></i>
+              <span>linkedin.com/in/giuliano-prigioni</span>
+            </a>
+            <a href="https://github.com/Rulopwd40" target="_blank" class="contact-item">
+              <i class="fab fa-github"></i>
+              <span>github.com/Rulopwd40</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      </div>
+      <div class="skills-languages">
+      <section id="skills">
+        <div class="container skills">
+          <h2>Skills</h2>
+          <h3>Front End</h3>
+          <div class="cards">
+              @for(tech of frontend; track tech.name){
+                <div class="card">
+                  <img [src]="tech.imageUrl" [alt]="tech.name" class="tech-img"/>
+                  <h4>{{tech.name}}</h4>
+                </div>
+              }
+          </div>
+          <h3>Back End</h3>
+          <div class="cards">
+            @for(tech of backend; track tech.name){
+              <div class="card">
+                <img [src]="tech.imageUrl" [alt]="tech.name" class="tech-img"/>
+                <h4>{{tech.name}}</h4>
+              </div>
+            }
+          
+          </div>
+          <h3>DataBases</h3>
+          <div class="cards">
+            @for(tech of databases; track tech.name){
+              <div class="card">
+                <img [src]="tech.imageUrl" [alt]="tech.name" class="tech-img"/>
+                <h4>{{tech.name}}</h4>
+              </div>
+            }
+          </div>
+          <h3>Miscellaneous</h3>
+          <div class="cards">
+            @for(tech of miscellaneous; track tech.name){
+              <div class="card">
+                @if(tech.name == 'Github'){
+                  <img [src]="tech.imageUrl" [alt]="tech.name" class="tech-img" style="
+                    background-color: white;
+                    border-radius: 50%;"/>
+                <h4>{{tech.name}}</h4>
+                }
+                @else{
+                  <img [src]="tech.imageUrl" [alt]="tech.name" class="tech-img" />
+                  <h4>{{tech.name}}</h4>
+                }
+              </div>
+            }
+          </div>
+        </div>
+      </section>
+      <section id="languages">
+        <div class="container languages">
+          <h2>Languages</h2>
+          <div class="cards">
+          @for(language of languages;track language.name){
+            <div class="card">
+              <div class="language-image">
+              <img [src]="language.imageUrl" [alt]="language.name"/>
+              </div>
+              <h4>{{language.name}}</h4>
+              <p>{{language.level}}</p>
+            </div>
+          }
+        </div>
+        </div>
+      </section>
+    
+    </div>
+      </div>
+      
+
+    </main>
+
+    <footer> 
+         <p>© 2024 Giuliano Prigioni. All rights reserved.</p>
+  </footer>
+</body>
